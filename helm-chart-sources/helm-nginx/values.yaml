@@ -1,17 +1,35 @@
-# Default values for helm-nginx.
+# Default values for hello-nginx.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
+versions:
+ - name: nginx-stable
+   image:
+     repository: nginx:1.17.3-alpine
+     tag: stable
+     pullPolicy: IfNotPresent
+   service:
+     type: ClusterIP
+     port: 80   
+   replicaCount: 2   
+ - name: nginx-next-gen
+   image:
+     repository: nginx:latest
+     tag: latest
+     pullPolicy: IfNotPresent
+   service:
+     type: ClusterIP
+     port: 80 
+   replicaCount: 1  
 
-image:
-  repository: nginx
-  tag: stable
-  pullPolicy: IfNotPresent
+# image:
+#   repository: nginx
+#   tag: stable
+#   pullPolicy: IfNotPresent
 
-service:
-  type: ClusterIP
-  port: 80
+# service:
+#   type: ClusterIP
+#   port: 80
 
 ingress:
   enabled: false
