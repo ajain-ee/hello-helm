@@ -3,11 +3,11 @@ entries:
   helm-nginx:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-08-21T11:13:47.779856914+05:30
+    created: 2019-08-21T11:15:19.718886273+05:30
     description: A Helm chart for Kubernetes
     digest: 169e98467836daf67b32cfea0b9013f21e10379adf7d61a23c064af84dbe6e26
     name: helm-nginx
     urls:
-    - https://mattiaperi.github.io/helm-chart/helm-nginx-0.1.0.tgz
+    - https://github.com/ajain-ee/hello-helm.git/helm-nginx-0.1.0.tgz
     version: 0.1.0
-generated: 2019-08-21T11:13:47.779281082+05:30
+generated: 2019-08-21T11:15:19.718194647+05:30
