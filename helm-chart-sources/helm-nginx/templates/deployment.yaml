@@ -22,7 +22,7 @@ spec:
         app: {{ .name }}
         release: {{ $.Release.Name }}
       annotations:
-        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") $dot | sha256sum }}  
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") $dot | sha256sum }}
     spec:
       containers:
       - name: {{ .name }}
@@ -43,10 +43,10 @@ spec:
           httpGet:
             path: /
             port: http
-        volumes:
-        - name: config-volume
-          configMap:
-            name: {{ .name }}-ConfigMap
+      volumes:
+      - name: config-volume
+        configMap:
+          name: {{ .name }}-configmap
 {{ toYaml $.Values.resources | indent 12 }}
     {{- with $.Values.nodeSelector }}
       nodeSelector:

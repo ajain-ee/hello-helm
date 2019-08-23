@@ -11,7 +11,11 @@ versions:
    service:
      type: ClusterIP
      port: 80   
-   replicaCount: 2   
+   replicaCount: 2  
+   configmap:
+     value1: "a" 
+     value2: "b" 
+     value3: 3 
  - name: nginx-next-gen
    image:
      repository: nginx:latest
@@ -20,6 +24,9 @@ versions:
    service:
      type: ClusterIP
      port: 80 
+   configmap:
+     value1: "x" 
+     value2: "y"   
    replicaCount: 1  
 
 # image:
